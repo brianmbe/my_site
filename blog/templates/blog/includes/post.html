@@ -2,12 +2,14 @@
 
 <li>
     <article class="post">
-        <a href="{% url 'post-details-page' 'the-mountains'%}">
-            <img src="{% static 'images/'|add:post.image %}" alt="Mountain Hiking">
+        <a href="{% url 'post-details-page' post.slug%}">
+            <img src="{% static 'images/'|add:post.image %}" alt="{{ post.title }}">
             <div class="post__content">
-                <h3>{{ post.title }}</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Maiores natus fuga beatae ex a asperiores ratione labore!.
+                <h3>
+                    {{ post.title }}
+                </h3>
+                <p>
+                    {{ post.excerpt }}
                 </p>
             </div>
         </a>
